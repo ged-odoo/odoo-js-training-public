@@ -6,6 +6,10 @@ export class Todo extends Component {
     onClick(ev) {
         this.props.toggleState(this.props.id);
     }
+
+    onRemove() {
+        this.props.removeTodo(this.props.id);
+    }
 }
 
 Todo.template = "awesome_tshirt.Todo";
@@ -14,4 +18,5 @@ Todo.props = {
     description: { type: String },
     done: { type: Boolean },
     toggleState: { type: Function },
+    removeTodo: { type: Function},
 };
