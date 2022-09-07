@@ -5,7 +5,7 @@
     <div class="p-3">
         hello world
         <Counter/>
-        <Todo id="todo.id" description="todo.description" done="todo.done"/>       
+        <TodoList/>       
     </div>
 </t>
 
