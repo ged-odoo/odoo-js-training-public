@@ -18,6 +18,13 @@ export class TodoList extends Component {
             ev.target.value = "";
         }
     }
+
+    toggleTodo(todoId) {
+        const todo = this.todoList.find((todo) => todo.id === todoId);
+        if (todo) {
+            todo.done = !todo.done;
+        }
+    }
 }
 
 TodoList.components = { Todo };
