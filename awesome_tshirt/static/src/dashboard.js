@@ -22,7 +22,7 @@ class AwesomeDashboard extends Component {
         };
 
         this.action = useService("action");
-        this.rpc = useService("rpc");
+        this.tshirtService = useService("tshirtService");
 
         this.keyToString = {
             average_quantity: "Average amount of t-shirt by order this month",
@@ -32,7 +32,7 @@ class AwesomeDashboard extends Component {
             total_amount: "Total amount of new orders this month",
         };
         onWillStart(async () => {
-            this.statistics = await this.rpc("/awesome_tshirt/statistics");
+            this.statistics = await this.tshirtService.loadStatistics();
         });
     }
 
