@@ -6,6 +6,7 @@ import { getDefaultConfig } from "@web/views/view";
 import { useService } from "@web/core/utils/hooks";
 import { Domain } from "@web/core/domain";
 import { Card } from "./card/card";
+import { PieChart } from "./pie_chart/pie_chart";
 
 const { Component, useSubEnv, onWillStart } = owl;
 
@@ -65,7 +66,7 @@ class AwesomeDashboard extends Component {
     }
 }
 
-AwesomeDashboard.components = { Layout, Card };
+AwesomeDashboard.components = { Layout, Card, PieChart };
 AwesomeDashboard.template = "awesome_tshirt.clientaction";
 
 registry.category("actions").add("awesome_tshirt.dashboard", AwesomeDashboard);
