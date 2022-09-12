@@ -9,14 +9,15 @@
             <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
         </t>
     </Layout>
-
-    <t t-call="awesome_tshirt.clientaction.statistics"/>
-
-    <div class="m-3">
-        <Card className="'w-25'">
-            <t t-set-slot="title">Shirt orders by size</t>
-            <PieChart data="statistics['orders_by_size']" label="'Shirt orders by size'"/>
-        </Card>
+    <div class="h-100 o_awesome_tshirt_dashboard">
+        <t t-call="awesome_tshirt.clientaction.statistics"/>
+    
+        <div class="m-3">
+            <Card className="'w-25'">
+                <t t-set-slot="title">Shirt orders by size</t>
+                <PieChart data="statistics['orders_by_size']" label="'Shirt orders by size'" onPieClick.bind="openFilteredBySizeOrders"/>
+            </Card>
+        </div>
     </div>
 
 </t>
