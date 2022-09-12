@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="awesome_tshirt.StatSystray" owl="1">
+        <div>
+            <button class="btn" t-on-click="openNewOrders">
+                <i class="fa fa-shopping-basket"></i><span class="badge bg-primary" t-esc="statistics.nb_new_orders"/>
+            </button>
+        </div>
+    </t>
+</templates>
