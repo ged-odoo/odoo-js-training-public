@@ -10,11 +10,26 @@ class OrderFormController extends FormController {
     setup() {
         super.setup();
         this.orm = useService("orm");
+        this.notificationService = useService("notification");
         this.debouncedPrintLabel = useDebounced(this.printLabel, 200);
     }
 
-    printLabel() {
-        return this.orm.call(this.model.root.resModel, "print_label", [this.model.root.resId]);
+    async printLabel() {
+        const serverResult = await this.orm.call(this.model.root.resModel, "print_label", [
+            this.model.root.resId,
+        ]);
+
+        if (serverResult) {
+            this.notificationService.add(this.env._t("Label successfully printed"), {
+                type: "success",
+            });
+        } else {
+            this.notificationService.add(this.env._t("Could not print the label"), {
+                type: "danger",
+            });
+        }
+
+        return serverResult;
     }
 
     get isPrintBtnPrimary() {
