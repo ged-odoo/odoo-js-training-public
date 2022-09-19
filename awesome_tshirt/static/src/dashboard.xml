@@ -4,9 +4,10 @@
 <t t-name="awesome_tshirt.clientaction" owl="1">
     <Layout display="display">
         <t t-set-slot="control-panel-bottom-left">
-            <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
             <button class="btn btn-primary" t-on-click="openLast7DaysOrders"> New Orders </button>
             <button class="btn btn-primary" t-on-click="openLast7DaysCancelledOrders"> Cancelled Orders </button>
+            <button class="btn btn-primary" t-on-click="openCustomerView"> Customers </button>
+            <CustomerAutocomplete/>
         </t>
     </Layout>
     <div class="h-100 o_awesome_tshirt_dashboard">

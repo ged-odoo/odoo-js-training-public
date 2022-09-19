@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="awesome_tshirt.CustomerAutocomplete" owl="1">
+        <div class="btn">
+            <AutoComplete
+                value="''"
+                sources="sources"
+                placeholder="'Search order by customer ...'"
+                autoSelect="false"
+                onSelect.bind="onSelect"
+            />
+        </div>
+    </t>
+</templates>
