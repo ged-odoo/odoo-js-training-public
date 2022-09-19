@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_tshirt.Breadcrumbs" t-inherit="web.Breadcrumbs" t-inherit-mode="extension" owl="1">
+        <xpath expr="//ol" position="inside">
+            <li class="ms-1 text-danger"> <i t-on-click="openDialog" class="fa fa-eye blink"/> </li>
+        </xpath>
+    </t>
+
+</templates>
