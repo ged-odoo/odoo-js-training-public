@@ -1,0 +1,9 @@
+.o-kitten-mode {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/58/Mellow_kitten_%28Unsplash%29.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    & > * {
+        opacity: 0.9;
+    }
+}
