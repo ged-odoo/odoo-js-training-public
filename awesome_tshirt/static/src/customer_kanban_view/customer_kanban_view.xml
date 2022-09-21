@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="awesome_tshirt.CustomerKanbanView" t-inherit="web.KanbanView" owl="1">
+        <xpath expr="//t[@t-component='props.Renderer']" position="before">
+            <div class="bg-white border-end o_awesome_tshirt_sidebar overflow-auto">
+                <CustomerList selectCustomer.bind="selectCustomer"/>
+            </div>
+        </xpath>
+
+        <xpath expr="//t[@t-component='props.Renderer']" position="attributes">
+            <attribute name="archInfo">archInfo</attribute>
+        </xpath>
+
+        <xpath expr="//Layout" position="attributes">
+            <attribute name="className">model.useSampleModel ? 'o_view_sample_data' : '' + "d-flex"</attribute>
+        </xpath>
+    </t>
+</templates>
