@@ -11,8 +11,13 @@ class CustomerKanbanController extends KanbanController {
         this.archInfo.className += " flex-grow-1";
     }
 
-    selectCustomer(customer_id) {
-        console.log(customer_id);
+    selectCustomer(customer_id, customer_name) {
+        this.env.searchModel.setDomainParts({
+            customer: {
+                domain: [["customer_id", "=", customer_id]],
+                facetLabel: customer_name,
+            },
+        });
     }
 }
 
