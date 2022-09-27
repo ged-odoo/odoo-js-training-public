@@ -6,8 +6,10 @@ export class GalleryArchParser extends XMLParser {
     parse(arch) {
         const xmlDoc = this.parseXML(arch);
         const imageField = xmlDoc.getAttribute("image_field");
+        const limit = xmlDoc.getAttribute("limit") || 80;
         return {
             imageField,
+            limit,
         };
     }
 }
