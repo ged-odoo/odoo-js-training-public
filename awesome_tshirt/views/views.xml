@@ -91,7 +91,7 @@
       <field name="name">awesome_tshirt.orders.gallery</field>
       <field name="model">awesome_tshirt.order</field>
       <field name="arch" type="xml">
-        <gallery image_field="image_url"/>
+        <gallery image_field="image_url" tooltip_field="customer_id"/>
       </field>
     </record>
 
