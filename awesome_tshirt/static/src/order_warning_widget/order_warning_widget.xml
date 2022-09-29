@@ -7,7 +7,7 @@
         <div t-if="warnings.length" class="alert alert-warning" role="alert" >
             <ul class="m-0">
                 <t t-foreach="warnings" t-as="warning" t-key="warning">
-                    <li><t t-esc="warning"/></li>
+                    <li><t t-out="warning"/></li>
                 </t>
             </ul>
         </div>
