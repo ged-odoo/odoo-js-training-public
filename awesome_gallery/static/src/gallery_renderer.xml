@@ -3,7 +3,7 @@
     <t t-name="awesome_gallery.Renderer" owl="1">
         <div class="row">
             <t t-foreach="props.images" t-as="image" t-key="image.id">
-                <GalleryImage image="image" imageField="props.imageField" className="'col-3'" />
+                <GalleryImage image="image" imageField="props.imageField" className="'col-3'" onClick.bind="onImageClick"/>
             </t>
         </div>
     </t>
