@@ -14,6 +14,12 @@ export class GalleryModel {
         this.tooltipField = tooltipField;
         this.keepLast = new KeepLast();
         this.pager = { offset: 0, limit: limit };
+        if (!(imageField in this.fields)) {
+            throw `image_field error: ${imageField} is not a field of ${resModel}`;
+        }
+        if (!(tooltipField in this.fields)) {
+            throw `image_field error: ${tooltipField} is not a field of ${resModel}`;
+        }
     }
 
     async load() {
