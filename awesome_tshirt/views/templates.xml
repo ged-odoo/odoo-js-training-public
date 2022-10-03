@@ -4,6 +4,8 @@
     <t t-call="web.layout">
       <t t-set="head">
         <t t-call-assets="web.assets_frontend" t-js="false"/>
+        <!-- ?debug=tests must be in the link in order to load the assets and correctly run the tour -->
+        <t t-call-assets="web.order_tests" t-if="'tests' in debug or test_mode_enabled" defer_load="True" />
       </t>
       <div id="wrap">
         <div class="oe_structure">
