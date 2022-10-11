@@ -35,8 +35,7 @@ goal of this exercise is to create a field from scratch.
 ## 3.2 Improving the image_preview field
 
 We want to improve the widget of the previous task to help the staff recognize
-orders for which some action should be done. In particular, we want to display,
-in readonly, a warning 'MISSING TSHIRT DESIGN' in red, if there is no image url
+orders for which some action should be done. In particular, we want to display a warning 'MISSING TSHIRT DESIGN' in red, if there is no image url
 specified on the order.
 
 ## 3.3 Customizing a field component
