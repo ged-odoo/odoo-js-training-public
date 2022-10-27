@@ -40,7 +40,7 @@ tour.register(
             run: "click",
         },
         {
-            content: "Make another order",
+            content: "Acces to /web",
             trigger: "button",
             run: () => {
                 window.location.href = '/web';
