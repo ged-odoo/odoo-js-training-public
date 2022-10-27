@@ -6,11 +6,12 @@
       <field name="name">awesome_tshirt.orders.form</field>
       <field name="model">awesome_tshirt.order</field>
       <field name="arch" type="xml">
-        <form>
+        <form js_class="order_form_view">
           <header>
             <field name="state" widget="statusbar" clickable="1"/>
           </header>
           <sheet>
+            <widget name="order_warning"/>
             <group>
               <group>
                 <field name="customer_id"/>
@@ -19,10 +20,10 @@
               </group>
               <group>
                 <field name="amount"/>
-                <field name="is_late"/>
+                <field name="is_late" widget="late_boolean"/>
               </group>
               <group>
-                <field name="image_url"/>
+                <field name="image_url" widget="image_preview"/>
               </group>
             </group>
           </sheet>
@@ -53,7 +54,7 @@
       <field name="name">awesome_tshirt.orders.kanban</field>
       <field name="model">awesome_tshirt.order</field>
       <field name="arch" type="xml">
-        <kanban default_group_by="state" class="o_kanban_small_column" on_create="quick_create" quick_create_view="awesome_tshirt.orders_form_view_simplified">
+        <kanban default_group_by="state" js_class="customer_kanban" class="o_kanban_small_column" on_create="quick_create" quick_create_view="awesome_tshirt.orders_form_view_simplified">
           <field name="customer_id"/>
           <templates>
             <t t-name="kanban-box">
@@ -63,7 +64,7 @@
                 <div>Quantity: <field name="quantity"/></div>
                 <div>Amount: <field name="amount"/></div>
                 <div>Created: <field name="create_date"/></div>
-                <div><field class="pull-right" name="is_late" options="{'not_late_color':'yellow'}"/></div>
+                <div><field class="pull-right" name="is_late" widget="late_boolean" options="{'not_late_color':'yellow'}"/></div>
               </div>
             </t>
           </templates>
@@ -80,9 +81,17 @@
           <field name="size"/>
           <field name="quantity"/>
           <field name="amount"/>
-          <field name="is_late"/>
+          <field name="is_late" widget="late_boolean"/>
           <field name="create_date"/>
         </tree>
+      </field>
+    </record>
+
+    <record id="orders_gallery_view" model="ir.ui.view">
+      <field name="name">awesome_tshirt.orders.gallery</field>
+      <field name="model">awesome_tshirt.order</field>
+      <field name="arch" type="xml">
+        <gallery image_field="image_url" tooltip_field="customer_id"/>
       </field>
     </record>
 
@@ -111,7 +120,7 @@
     <record model="ir.actions.act_window" id="orders">
       <field name="name">T-shirt Orders</field>
       <field name="res_model">awesome_tshirt.order</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">kanban,tree,form,gallery</field>
     </record>
 
     <record model="ir.actions.client" id="dashboard">

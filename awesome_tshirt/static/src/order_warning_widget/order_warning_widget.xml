@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="awesome_tshirt.OrderWarningWidget" owl="1">
+        <t t-set="imageWarning" t-value="props.record.data.image_url.length === 0"/>
+        <t t-set="promoWarning" t-value="props.record.data.amount > 100"/>
+
+        <div t-if="warnings.length" class="alert alert-warning" role="alert" >
+            <ul class="m-0">
+                <t t-foreach="warnings" t-as="warning" t-key="warning">
+                    <li><t t-out="warning"/></li>
+                </t>
+            </ul>
+        </div>
+        
+    </t>
+</templates>

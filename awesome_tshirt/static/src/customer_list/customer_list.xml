@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="awesome_tshirt.CustomerList" owl="1">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        <span>Customers with active orders</span>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" t-on-change="onChangeActiveCustomers"/>
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Active customers
+                            </label>
+                        </div>
+                        <Pager offset="pager.offset" limit="pager.limit" total="pager.total" onUpdate.bind="onUpdatePager" />
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input class="o_input w-100" placeholder="Filter customers" t-model="state.searchString"/>
+                    </td>
+                </tr>
+                <tr t-foreach="displayedPartners" t-as="partner" t-key="partner.id" class="o_awesome_tshirt_customer_hover">
+                    <td class="cursor-pointer" t-esc="partner.display_name" t-on-click="() => props.selectCustomer(partner.id, partner.display_name)" />
+                </tr>
+            </tbody>
+        </table>
+    </t>
+</templates>
