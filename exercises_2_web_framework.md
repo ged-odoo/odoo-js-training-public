@@ -53,7 +53,7 @@ add three buttons in the control panel bottom left zone:
   <summary><b>Resources</b></summary>
 
 - [odoo: page on services](https://www.odoo.com/documentation/master/developer/reference/frontend/services.html)
-- [example: doaction use](https://github.com/odoo/odoo/blob/16d55910c151daafa00338c26298d28463254a55/addons/account/static/src/components/journal_dashboard_activity/journal_dashboard_activity.js#L35)
+- [example: doAction use](https://github.com/odoo/odoo/blob/16d55910c151daafa00338c26298d28463254a55/addons/account/static/src/components/journal_dashboard_activity/journal_dashboard_activity.js#L35)
 - [data: action displaying res.partner](https://github.com/odoo/odoo/blob/16d55910c151daafa00338c26298d28463254a55/odoo/addons/base/views/res_partner_views.xml#L511)
 - [code: action service](https://github.com/odoo/odoo/blob/16d55910c151daafa00338c26298d28463254a55/addons/web/static/src/webclient/actions/action_service.js#L1456)
 
